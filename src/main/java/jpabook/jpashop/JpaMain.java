@@ -2,6 +2,10 @@ package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Book;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
+import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.domain.OrderItem;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -19,6 +23,7 @@ public class JpaMain {
             book.setAuthor("Alphago");
             book.setName("DeepMind");
             em.persist(book);
+
 
 
 

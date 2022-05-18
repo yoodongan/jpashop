@@ -1,28 +1,40 @@
 package jpabook.jpashop.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class Member extends BaseEntity{
-    @Id
-    @GeneratedValue
-    @Column(name = "MEMBER_ID")
-    private Long id;
+public class Member {
+    @Id @GeneratedValue
+    private long id;
+
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();
 
     private String name;
-
     private String city;
     private String street;
     private String zipCode;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
-    public void setId(Long id) {
+
+    public void setId(long id) {
         this.id = id;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     public String getName() {

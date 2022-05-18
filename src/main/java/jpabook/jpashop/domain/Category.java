@@ -6,12 +6,12 @@ import java.util.List;
 
 @Entity
 public class Category extends BaseEntity{
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     private Long id;
 
     private String name;
 
+    // Category parent 는 상위 카테고리임. 셀프 매핑한 것.
     @ManyToOne
     @JoinColumn(name = "PARENT_ID")
     private Category parent;
@@ -25,6 +25,7 @@ public class Category extends BaseEntity{
             inverseJoinColumns = @JoinColumn(name = "ITEM_ID")
     )
     private List<Item> items = new ArrayList<>();
+
 
 
 
