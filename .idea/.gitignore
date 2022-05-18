@@ -8,4 +8,4 @@
 /dataSources.local.xml
 
 #Maven
-target/
+*/target/*
