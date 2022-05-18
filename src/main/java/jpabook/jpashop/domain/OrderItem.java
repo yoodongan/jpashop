@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class OrderItem {
+public class OrderItem extends BaseEntity{
     @Id @GeneratedValue
     private Long id;
 
