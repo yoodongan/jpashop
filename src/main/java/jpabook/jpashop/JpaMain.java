@@ -3,6 +3,7 @@ package jpabook.jpashop;
 import jpabook.jpashop.domain.Book;
 
 import com.sun.org.apache.xpath.internal.operations.Or;
+import jpabook.jpashop.domain.Category;
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderItem;
 
@@ -19,12 +20,6 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-            Book book = new Book();
-            book.setAuthor("Alphago");
-            book.setName("DeepMind");
-            em.persist(book);
-
-
 
 
 
