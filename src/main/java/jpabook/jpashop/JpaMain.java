@@ -1,11 +1,6 @@
 package jpabook.jpashop;
 
-import jpabook.jpashop.domain.Book;
-
-import com.sun.org.apache.xpath.internal.operations.Or;
-import jpabook.jpashop.domain.Category;
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderItem;
+import jpabook.jpashop.domain.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,8 +15,9 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-
-
+            Delivery delivery = new Delivery();
+            delivery.setAddress(new Address("A", "B", "C"));
+            em.persist(delivery);
 
 
             tx.commit();
