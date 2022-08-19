@@ -15,20 +15,20 @@ import static org.junit.jupiter.api.Assertions.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class MemberRepositoryTest {
-    @Autowired
-    MemberRepository memberRepository;
-
-    @Test
-    @Transactional
-    public void memberSave() {
-        Member member = new Member();
-        member.setUsername("spring");
-        Long saveId = memberRepository.save(member);
-        Member findMember = memberRepository.find(saveId);
-        Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
-        Assertions.assertThat(member).isEqualTo(findMember);
-
-    }
+//    @Autowired
+//    MemberRepository memberRepository;
+//
+//    @Test
+//    @Transactional
+//    public void memberSave() {
+//        Member member = new Member();
+//        member.setUsername("spring");
+//        Long saveId = memberRepository.save(member);
+//        Member findMember = memberRepository.find(saveId);
+//        Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
+//        Assertions.assertThat(member).isEqualTo(findMember);
+//
+//    }
 
 
 }
