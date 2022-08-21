@@ -37,7 +37,7 @@ public class OrderItem {
     }
 
     public void cancel() {
-        this.getItem().removeStock(count);
+        this.getItem().addStock(count);
     }
 
     // 주문상품 전체 가격 조회
