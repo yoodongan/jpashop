@@ -4,6 +4,7 @@ import jpabook.jpashop.domain.Address;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.service.MemberService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,6 +15,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
+@Slf4j
 @RequiredArgsConstructor
 public class MemberController {
     private final MemberService memberService;
@@ -42,7 +44,14 @@ public class MemberController {
     /* 회원 목록 */
     @GetMapping(value = "members")
     public String list(Model model) {
+
         List<Member> members = memberService.findMembers();
+        for (Member member : members) {
+            log.info("member {}",member.getAddress().getStreet());
+            log.info("member {}",member.getAddress().getCity());
+            log.info("member {}",member.getAddress().getZipCode());
+        }
+
         model.addAttribute("members", members);
         return "members/memberList";
 
