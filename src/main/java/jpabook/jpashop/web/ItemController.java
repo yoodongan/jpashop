@@ -38,7 +38,7 @@ public class ItemController {
         book.setStockQuantity(form.getStockQuantity());
 
         itemService.saveItem(book);
-        return "redirect:/items";
+        return "redirect:/items";  // 상품 등록 시, 목록화면으로 이동.
     }
 
     @GetMapping("/items")
