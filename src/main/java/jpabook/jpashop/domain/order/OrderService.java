@@ -5,15 +5,18 @@ import jpabook.jpashop.domain.item.ItemRepository;
 import jpabook.jpashop.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class OrderService {
     private final OrderRepository orderRepository;
     private final MemberRepository memberRepository;
     private final ItemRepository itemRepository;
 
     /* 주문 생성  */
+    @Transactional
     public Long order(Long memberId, Long itemId, int count) {
         // 회원 정보, 상품 정보 가져오기.
         Member member = memberRepository.findOne(memberId);
